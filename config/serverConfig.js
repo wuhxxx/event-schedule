@@ -21,7 +21,7 @@ module.exports = {
     },
 
     // port to listen on
-    PORT: process.env.PORT || 8000,
+    PORT: 8000,
 
     // token expires after 3 days
     // unit is SECOND, when value is number
