@@ -1,0 +1,50 @@
+{
+    "name": "event-schedule",
+    "version": "1.0.0",
+    "description": "An event schedule web application, inspired by codyHouse's simple-schedule template",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev-server": "nodemon server.js",
+        "test": "mocha",
+        "heroku-prebuild": "NPM_CONFIG_PRODUCTION=true",
+        "heroku-postbuild": "cd client && npm install && npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wuhxxx/event-schedule-server.git"
+    },
+    "keywords": [
+        "nodejs"
+    ],
+    "author": "Hongxin Wu (github.com/wuhxxx)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/wuhxxx/event-schedule-server/issues"
+    },
+    "homepage": "https://github.com/wuhxxx/event-schedule-server#readme",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.18.3",
+        "cli-color": "^1.3.0",
+        "express": "^4.16.3",
+        "joi": "^13.6.0",
+        "jsonwebtoken": "^8.3.0",
+        "mongoose": "^5.2.14",
+        "passport": "^0.4.0",
+        "passport-jwt": "^4.0.0",
+        "winston": "^2.4.4",
+        "winston-console-formatter": "^1.0.0-beta.3"
+    },
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "dotenv": "^6.2.0",
+        "eslint": "^5.5.0",
+        "mocha": "^5.2.0",
+        "nodemon": "^1.18.4",
+        "supertest": "^3.3.0"
+    },
+    "engines": {
+        "node": "10.x"
+    }
+}

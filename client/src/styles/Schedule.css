@@ -1,0 +1,69 @@
+/* font family for Schedule, not the same as TopBar. */
+
+body {
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+/* -------------------------------- 
+
+Main Components 
+
+-------------------------------- */
+
+.cd-schedule {
+    position: relative;
+    margin: 2em 0;
+}
+
+/* todo: get rid of this */
+.cd-schedule::before {
+    /* never visible - this is used in js to check the current MQ */
+    content: "mobile";
+    display: none;
+}
+
+.events {
+    position: relative;
+    z-index: 1;
+}
+
+@media only screen and (min-width: 800px) {
+    .cd-schedule {
+        width: 90%;
+        max-width: 1400px;
+        margin: 2em auto;
+    }
+    .cd-schedule::after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+    .cd-schedule::before {
+        content: "desktop";
+    }
+
+    .events {
+        float: left;
+        width: 100%;
+    }
+}
+
+/** must be below media query which min-width is 800px, or this will not be overridden! */
+@media only screen and (min-width: 1000px) {
+    .events {
+        /* 60px is the .timeline element width */
+        width: calc(100% - 60px);
+        margin-left: 60px;
+    }
+}
+
+.progress-container {
+    padding-top: 3em;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.3em;
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 1);
+}

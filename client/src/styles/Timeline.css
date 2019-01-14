@@ -1,0 +1,52 @@
+/* Mobile view, not display */
+.timeline {
+    display: none;
+}
+
+@media only screen and (min-width: 800px) {
+    .timeline {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        padding-top: 50px;
+    }
+    .timeline li {
+        position: relative;
+        height: 50px;
+    }
+    .timeline li::after {
+        /* this is used to create the table horizontal lines */
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #eaeaea;
+    }
+    .timeline li:last-of-type::after {
+        display: none;
+    }
+    .timeline li span {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .timeline li::after {
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+    .timeline li span {
+        display: inline-block;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .timeline li:nth-of-type(2n) span {
+        display: none;
+    }
+}

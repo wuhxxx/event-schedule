@@ -1,0 +1,11 @@
+# The node module directory
+node_modules
+
+# eslint rules configuration file
+.eslintrc.json
+
+# Environment variables
+.env
+
+# vscode configuration
+.vscode

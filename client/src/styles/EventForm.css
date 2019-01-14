@@ -1,0 +1,222 @@
+.event-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: 80px;
+    /* vertically center its content */
+    display: table;
+}
+
+.event-form.edit .header {
+    height: 90px;
+}
+
+.header .content {
+    position: relative;
+    z-index: 3;
+    /* vertically center inside its parent */
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0.6em 5%;
+}
+
+.body {
+    /* position: relative; */
+    width: 100%;
+    background-color: white;
+    /* 80px is the .header height */
+    /* height: calc(100% - 80px); */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-info {
+    z-index: 2;
+    line-height: 1.4;
+    height: 100%;
+    padding: 1.4em 5% 0;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.time-picker {
+    flex: 0 0 70px;
+    width: 320px;
+}
+
+.location-textfield {
+    flex: 0 0 70px;
+    width: 320px;
+}
+
+.description-textfield {
+    flex-grow: 2;
+    width: 100%;
+}
+
+.color-picker-indicater {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+}
+
+.color-picker {
+    flex: 0 0 124px;
+}
+
+.buttons-bar {
+    width: 100%;
+    /* fixed height, no grow nor shrink */
+    flex: 0 0 52px;
+    padding-right: 10px;
+    display: flex;
+    /* flex-direction: row-reverse; */
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.event-name,
+.event-date,
+.event-location {
+    display: block;
+    color: white;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.event-date {
+    /* they are not included in the the HTML but added using JavScript */
+    font-size: 1.4rem;
+    opacity: 0.7;
+    line-height: 1.2;
+    margin-bottom: 0.2em;
+}
+
+.event-location {
+    color: black;
+    font-size: 1.6rem;
+    opacity: 0.7;
+    /* line-height: 1.2; */
+    margin-bottom: 0.4em;
+}
+
+.event-description {
+    flex-grow: 1;
+    overflow: scroll;
+}
+
+.close {
+    /* this is the 'X' icon */
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.1);
+    /* replace text with icon */
+    color: transparent;
+    white-space: nowrap;
+    text-indent: 100%;
+    height: 80px;
+    width: 80px;
+}
+
+.event-form.edit .close {
+    height: 90px;
+    width: 90px;
+}
+
+.close::before,
+.close::after {
+    /* these are the two lines of the 'X' icon */
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 44px;
+    background: white;
+}
+
+.close::before {
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+
+.close::after {
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+}
+
+/* desktop styles */
+@media only screen and (min-width: 800px) {
+    .event-form {
+        flex-direction: row;
+    }
+
+    /* header */
+    .header {
+        display: block;
+        height: 100%;
+        width: 28%;
+    }
+    .event-form.edit .header {
+        height: 100%;
+    }
+    .header .content {
+        /* reset style */
+        display: block;
+        padding: 0.8em;
+    }
+
+    /* body */
+    .body {
+        flex-grow: 1;
+        height: 100%;
+    }
+    .event-info {
+        padding: 2em 3em 0em 2em;
+    }
+
+    .event-name {
+        font-size: 2rem;
+    }
+
+    /* smaller close icon on desktop */
+    .close {
+        width: 40px;
+        height: 40px;
+        background: transparent;
+    }
+    .event-form.edit .close {
+        width: 40px;
+        height: 40px;
+    }
+    .close:hover {
+        background: rgba(0, 0, 0, 0.1);
+    }
+    .close::after,
+    .close::before {
+        background: #222222;
+        height: 16px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .header {
+        width: 40%;
+    }
+    .header .content {
+        padding: 1.2em;
+    }
+}

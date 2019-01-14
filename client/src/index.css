@@ -1,0 +1,40 @@
+/* reset styles, as different browsers have different default styles. */
+@import "./reset.css";
+
+/* -------------------------------- 
+
+Primary style - by CodyHouse.co
+
+-------------------------------- */
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    /* font-family: "PT Sans", sans-serif; */
+    /* color: #505260; */
+    background-color: white;
+}
+
+a {
+    /* todo: <a> tag color of simple schedule template */
+    /* color: #A2B9B2; */
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+input::-ms-clear,
+textarea::-ms-clear {
+    display: none;
+}

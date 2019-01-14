@@ -1,0 +1,90 @@
+.single-event {
+    /* force them to stay on one line */
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    float: left;
+    height: 150px;
+    width: 70%;
+    max-width: 300px;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+    margin-right: 20px;
+    -webkit-transition: opacity 0.2s, background 0.2s;
+    transition: opacity 0.2s, background 0.2s;
+}
+
+.single-event:last-of-type {
+    margin-right: 5%;
+}
+
+.single-event a {
+    display: block;
+    height: 100%;
+    padding: 0.8em;
+}
+
+.single-event a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media only screen and (min-width: 550px) {
+    .single-event {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .single-event {
+        position: absolute;
+        z-index: 3;
+        /* top position and height will be set using js */
+        width: calc(100% + 2px);
+        left: -1px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+            inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+        /* reset style */
+        -ms-flex-negative: 1;
+        flex-shrink: 1;
+        height: auto;
+        max-width: none;
+        margin-right: 0;
+    }
+    .single-event a {
+        padding: 1.2em;
+    }
+    .single-event:last-of-type {
+        /* reset style */
+        margin-right: 0;
+    }
+    .single-event.selected-event {
+        /* the .selected-event class is added when an user select the event */
+        visibility: hidden;
+    }
+}
+
+/* event name and date */
+.event-name,
+.event-date {
+    display: block;
+    color: white;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.event-name {
+    font-size: 2.4rem;
+}
+
+@media only screen and (min-width: 800px) {
+    .event-name {
+        font-size: 2rem;
+    }
+}
+
+.event-date {
+    /* they are not included in the the HTML but added using JavScript */
+    font-size: 1.4rem;
+    opacity: 0.7;
+    line-height: 1.2;
+    margin-bottom: 0.2em;
+}

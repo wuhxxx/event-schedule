@@ -1,0 +1,85 @@
+.events-group {
+    margin-bottom: 30px;
+}
+
+.top-info {
+    width: 100%;
+    padding: 0 5%;
+}
+
+.top-info > span {
+    display: inline-block;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* ? for single events' ul ? */
+.events-group > ul {
+    position: relative;
+    padding: 0 5%;
+    /* force its children to stay on one line */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.events-group > ul::after {
+    /* never visible - used to add a right padding to .events-group > ul */
+    display: inline-block;
+    content: "-";
+    width: 1px;
+    height: 100%;
+    opacity: 0;
+    color: transparent;
+}
+
+@media only screen and (min-width: 800px) {
+    .events-group {
+        width: 20%;
+        float: left;
+        border: 1px solid #eaeaea;
+        /* reset style */
+        margin-bottom: 0;
+    }
+    .events-group:not(:first-of-type) {
+        border-left-width: 0;
+    }
+    .top-info {
+        /* vertically center its content */
+        display: table;
+        height: 50px;
+        border-bottom: 1px solid #eaeaea;
+        /* reset style */
+        padding: 0;
+    }
+    .top-info > span {
+        /* vertically center inside its parent */
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 0.5em;
+        text-align: center;
+        /* reset style */
+        font-weight: normal;
+        margin-bottom: 0;
+    }
+    .events-group > ul {
+        /* * EventGroup component will set height for this ul, so below style will be overide. */
+        height: 1050px;
+        /* reset style */
+        display: block;
+        overflow: visible;
+        padding: 0;
+    }
+    .events-group > ul::after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+    .events-group > ul::after {
+        /* reset style */
+        display: none;
+    }
+}

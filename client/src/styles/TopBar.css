@@ -1,0 +1,178 @@
+/* font family for TopBar, not the same as Schedule. */
+
+body {
+    font-family: "PT Sans", sans-serif;
+}
+
+/* -------------------------------- 
+
+Login/Signup modal window - by CodyHouse.co
+
+-------------------------------- */
+.cd-main-header {
+    position: relative;
+    z-index: 2;
+    height: 50px;
+    background: #343642;
+}
+
+.cd-main-header::after {
+    /* clearfix */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.cd-main-header__logo {
+    width: 30%;
+    float: left;
+    /* margin: 4px 0 0 5%; */
+    margin-left: 5%;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* reduce logo size on mobile and make sure it is left aligned with the transform-origin property */
+    -webkit-transform-origin: 0 50%;
+    -ms-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+.cd-main-header__logo > .header-title {
+    margin-left: 5%;
+    white-space: nowrap;
+    /* padding-left: 5%; */
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+/* .cd-main-header__logo > .header-githubLogo {
+    width: 20%;
+    margin-left: 5%;
+} */
+
+/* .cd-main-header__logo img {
+    display: block;
+} */
+
+/* when width is 768px or wider */
+@media only screen and (min-width: 768px) {
+    .cd-main-header {
+        height: 80px;
+    }
+    .cd-main-header__logo {
+        /* margin: 20px 0 0 5%; */
+        margin-left: 5%;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.cd-main-nav {
+    float: right;
+    margin-right: 5%;
+    width: 44px;
+    height: 100%;
+    background: url("../assets/images/cd-icon-menu.svg") no-repeat center center;
+    cursor: pointer;
+}
+
+.cd-main-nav__list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.cd-main-nav__list.cd-main-nav__list--is-visible {
+    -webkit-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    transform: translateY(50px);
+    z-index: 1;
+}
+
+.cd-main-nav__item {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 5%;
+    background: #292a34;
+    /* border-top: 1px solid #3b3d4b; */
+    color: #fff;
+}
+
+/* when width is 768px or wider */
+@media only screen and (min-width: 768px) {
+    .cd-main-nav {
+        /* reset style */
+        width: auto;
+        height: auto;
+        background: none;
+        cursor: auto;
+    }
+    .cd-main-nav__list {
+        /* reset style */
+        position: static;
+        width: auto;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        line-height: 80px;
+    }
+    .cd-main-nav__list.cd-main-nav__list--is-visible {
+        /* reset style */
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+    .cd-main-nav__list li {
+        display: inline-block;
+        margin-left: 1em;
+    }
+    .cd-main-nav__list li:nth-last-child(2) {
+        margin-left: 2em;
+    }
+    .cd-main-nav__item {
+        display: inline-block;
+        height: auto;
+        line-height: normal;
+        background: transparent;
+    }
+    .cd-main-nav__item.cd-main-nav__item--signin,
+    .cd-main-nav__item.cd-main-nav__item--signup,
+    .cd-main-nav__item.top-bar-nav--welcome-msg,
+    .cd-main-nav__item.top-bar-nav__item--logout {
+        padding: 0.6em 1em;
+    }
+    .cd-main-nav__item.cd-main-nav__item--signin {
+        border-radius: 50em;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+    .cd-main-nav__item.cd-main-nav__item--signin:hover {
+        background-color: #414351;
+    }
+    .cd-main-nav__item.cd-main-nav__item--signup {
+        border-radius: 50em;
+        background: #2f889a;
+    }
+    .cd-main-nav__item.cd-main-nav__item--signup:hover {
+        background-color: #3291a4;
+    }
+    .cd-main-nav__item.top-bar-nav--welcome-msg {
+        font-size: 1.15em;
+    }
+    .cd-main-nav__item.top-bar-nav__item--logout {
+        border-radius: 50em;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+    .cd-main-nav__item.top-bar-nav__item--logout:hover {
+        background-color: #414351;
+    }
+}
