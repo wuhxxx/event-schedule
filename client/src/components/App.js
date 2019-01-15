@@ -14,6 +14,7 @@ import {
 } from "../constants";
 import TopBar from "./TopBar";
 import Schedule from "./Schedule";
+import BottomInfo from "./BottomInfo";
 import "react-toastify/dist/ReactToastify.min.css";
 import "../styles/App.css";
 
@@ -49,6 +50,7 @@ class App extends Component {
                 <div>
                     <TopBar />
                     <Schedule />
+                    <BottomInfo />
                     <ToastContainer
                         position={toast.POSITION.TOP_CENTER}
                         autoClose={3500}
