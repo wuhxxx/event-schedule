@@ -22,14 +22,16 @@ window.__MUI_USE_NEXT_TYPOGRAPHY_VARIANTS__ = true;
 
 const middlewares = [thunk];
 
-const store = createStore(
-    reducer,
-    compose(
-        applyMiddleware(...middlewares),
-        window.__REDUX_DEVTOOLS_EXTENSION__ &&
-            window.__REDUX_DEVTOOLS_EXTENSION__()
-    )
-);
+// fix app crash on browser which has no redux devtools extension
+const enhancer = window.__REDUX_DEVTOOLS_EXTENSION__
+    ? compose(
+          applyMiddleware(...middlewares),
+          window.__REDUX_DEVTOOLS_EXTENSION__ &&
+              window.__REDUX_DEVTOOLS_EXTENSION__()
+      )
+    : compose(applyMiddleware(...middlewares));
+
+const store = createStore(reducer, enhancer);
 
 // check if token exists and valid at initialization
 const username = localStorage.getItem(LOCAL_USERNAME_KEY);
