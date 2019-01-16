@@ -13,19 +13,6 @@ export default function BottomInfo() {
             >
                 <img src={github} alt="Github" className="github-logo" />
             </a>
-            {/* <div className="github-logo">
-                    <img src={github} alt="Github" />
-                </div>
-
-                <span className="repo-link">
-                    <a
-                        href="https://github.com/wuhxxx/event-schedule"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        event-schedule
-                    </a>
-                </span> */}
         </div>
     );
 }

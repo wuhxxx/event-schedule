@@ -23,7 +23,7 @@ class SigninForm extends Component {
         signUserIn: PropTypes.func
     };
 
-    state = {
+    initialState = {
         isPasswordHidden: true,
         [EMAIL]: "",
         [EMAIL_ERROR]: "",
@@ -31,6 +31,8 @@ class SigninForm extends Component {
         [PASSWORD_ERROR]: "",
         isWaitingApi: false
     };
+
+    state = { ...this.initialState };
 
     handleInputValueChange = event => {
         const target = event.target;
@@ -84,7 +86,8 @@ class SigninForm extends Component {
         axios
             .post(`${USER_API_ROUTE}/login`, user)
             .then(res => {
-                this.setState({ isWaitingApi: false });
+                // reset state then close modal
+                this.setState({ ...this.initialState });
                 this.props.closeModal();
                 toast.info("🎉 You are logged in!");
                 // dispatch signin action

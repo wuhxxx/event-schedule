@@ -18,11 +18,13 @@ class ResetForm extends Component {
         closeModal: PropTypes.func
     };
 
-    state = {
+    initialState = {
         [EMAIL]: "",
         [EMAIL_ERROR]: "",
         isWaitingApi: false
     };
+
+    state = { ...this.initialState };
 
     handleInputValueChange = event => {
         const target = event.target;
@@ -62,7 +64,8 @@ class ResetForm extends Component {
         axios
             .delete(`${USER_API_ROUTE}`, { data: { email: emailInput } })
             .then(res => {
-                this.setState({ isWaitingApi: false });
+                // reset state and close modal
+                this.setState({ ...this.initialState });
                 this.props.closeModal();
                 toast.warn("☠️ Account deleted!");
             })

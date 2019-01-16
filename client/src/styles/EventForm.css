@@ -43,7 +43,7 @@
     flex-grow: 2;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow: auto;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -111,7 +111,7 @@
 
 .event-description {
     flex-grow: 1;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .close {

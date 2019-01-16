@@ -31,7 +31,7 @@ class SignupForm extends Component {
         signUserIn: PropTypes.func.isRequired
     };
 
-    state = {
+    initialState = {
         isPasswordHidden: true,
         isTermsShown: false,
         [USERNAME]: "",
@@ -42,6 +42,8 @@ class SignupForm extends Component {
         [PASSWORD_ERROR]: "",
         isWaitingApi: false
     };
+
+    state = { ...this.initialState };
 
     handleInputValueChange = event => {
         const target = event.target;
@@ -107,7 +109,8 @@ class SignupForm extends Component {
         axios
             .post(`${USER_API_ROUTE}/signup`, newUser)
             .then(res => {
-                this.setState({ isWaitingApi: false });
+                // reset state then close modal
+                this.setState({ ...this.initialState });
                 this.props.closeModal();
                 toast.info("🎉 You are logged in!");
                 // dispatch signin action, remember user by default

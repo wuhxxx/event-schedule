@@ -1,7 +1,7 @@
 .bottom-info {
+    padding: 1.2em 5%;
+    box-sizing: border-box;
     width: 100%;
-    height: auto;
-    margin: 1.2em 5%;
 }
 
 .github-logo {

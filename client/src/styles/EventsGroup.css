@@ -14,7 +14,6 @@
     font-weight: bold;
 }
 
-/* ? for single events' ul ? */
 .events-group > ul {
     position: relative;
     padding: 0 5%;
@@ -22,7 +21,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
 
