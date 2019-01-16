@@ -383,7 +383,7 @@ class EventFormEditMode extends Component {
                             </span>
                             <TwitterPicker
                                 triangle={"hide"}
-                                width={"348px"}
+                                width={"280px"}
                                 color={headerColor}
                                 colors={COLOR_CHOICES}
                                 onChangeComplete={this.handleColorChange}

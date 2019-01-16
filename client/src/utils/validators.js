@@ -30,7 +30,10 @@ export const validateEmail = email => {
 export const validateUsername = username => {
     // User name must be 2-12 long,
     // no leading/ending space or "."
-    const reg = /^(?=.{2,12}$)(?![.\s])[a-zA-Z0-9._\s]+(?<![.\s])$/;
+
+    // const reg = /^(?=.{2,12}$)(?![.\s])[a-zA-Z0-9._\s]+(?<![.\s])$/;
+    // fix "SyntaxError: Invalid regular expression: invalid group specifier name" on safari
+    const reg = /^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){0,10}[a-zA-Z0-9]$/;
     return {
         [USERNAME_ERROR]:
             !username || reg.test(username)

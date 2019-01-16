@@ -9,6 +9,8 @@
     height: 80px;
     /* vertically center its content */
     display: table;
+    /* fix width on mobile browser */
+    width: 100%;
 }
 
 .event-form.edit .header {
@@ -49,17 +51,18 @@
 
 .time-picker {
     flex: 0 0 70px;
-    width: 320px;
+    width: auto;
 }
 
 .location-textfield {
     flex: 0 0 70px;
-    width: 320px;
+    width: auto;
+    max-width: 350px;
 }
 
 .description-textfield {
     flex-grow: 2;
-    width: 100%;
+    width: auto;
 }
 
 .color-picker-indicater {

@@ -36,20 +36,16 @@ export const DEFAULT_EVENT = {
 };
 // color choices of color picker
 export const COLOR_CHOICES = [
-    "#0097A7",
     "#0693E3",
     "#443453",
     "#555555",
     "#577F92",
     "#697689",
-    "#7BDCB5",
     "#8ED1FC",
     "#A2B9B2",
-    "#AFB42B",
     "#F6B067",
     "#F57F17",
-    "#F78DA7",
-    "#E64A19"
+    "#F78DA7"
 ];
 
 /********************** TopBar related constants **********************/
