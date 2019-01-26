@@ -1,6 +1,6 @@
 # event-schedule
 
-### <a href="https://event-schedule-app.herokuapp.com" target="_blank" rel="noopener noreferrer">Demo</a>
+### [Demo](https://event-schedule-app.herokuapp.com)
 
 ## Introduction
 
